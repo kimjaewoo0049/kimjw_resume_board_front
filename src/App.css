@@ -1,38 +1,1384 @@
-.App {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* css reset start */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* css reset end */
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+a:visited,
+a:active {
+  color: white;
+}
+
+/* 
+영어폰트
+.kanit-thin {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.kanit-thin-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.kanit-extralight {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.kanit-extralight-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.kanit-light {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kanit-light-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kanit-regular-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.kanit-medium {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.kanit-medium-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.kanit-semibold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.kanit-semibold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.kanit-bold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.kanit-bold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.kanit-extrabold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.kanit-extrabold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.kanit-black {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.kanit-black-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+*/
+
+/* 한글폰트
+.kanit-thin {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.kanit-extralight {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.kanit-light {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kanit-medium {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.kanit-semibold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.kanit-bold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.kanit-extrabold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.kanit-black {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.kanit-thin-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.kanit-extralight-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.kanit-light-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.kanit-regular-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.kanit-medium-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.kanit-semibold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.kanit-bold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.kanit-extrabold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.kanit-black-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+*/
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  background-color: #404040;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  align-content: center;
+  box-sizing: border-box;
+  padding: 0px 50px;
+}
+
+
+
+.navbar a:link {
+  color: #ffffff;
+}
+.navbar a:visited {
+  color: #ffffff;
+}
+.navbar a:active {
+  color: #ffffff;
+}
+.hiddenMenuOff {
+  display: none;
+}
+
+.hiddenMenu {
+  width: 100%;
+  height: 300px;
+  background-color: #404040;
+  z-index: 5;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  transform: translate(opacity 0.5);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hiddenMenu > span:nth-child(1) {
+  margin-top: 120px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.hiddenMenu > span {
+  color: #ffffff;
+  font-weight: bolder;
+  z-index: 6;
+  font-size: 24px;
+  margin-top: 30px;
+  text-shadow: 5px 5px 5px #000000;
+  cursor: pointer;
+}
+
+.menu_icon {
+  display: inline-block;
+  position: relative;
+  width: 25px;
+  height: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+.menu_icon span {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 4px;
+  transform: translate(-50%, 0) rotate(0deg);
+  transition: 0.2s ease-in-out;
+}
+.menu_icon span:nth-child(1) {
+  top: 0px;
+}
+.menu_icon span:nth-child(2),
+.menu_icon span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu_icon span:nth-child(4) {
+  bottom: 0;
+}
+.menu_icon.active span:nth-child(1) {
+  top: 50%;
+  width: 0;
+  transform: translate(-50%, -50%);
+}
+.menu_icon.active span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.menu_icon.active span:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.menu_icon.active span:nth-child(4) {
+  bottom: 50%;
+  width: 0;
+  transform: translate(-50%, 50%);
+}
+
+/*popup start*/
+.popupOff {
+  display: none;
+}
+
+.popup {
+  width: 250px;
+  height: 200px;
+  border: 1px solid #c5c5c5;
+  border-radius: 30px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -200px 0px 0px -150px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.popup > p {
+  color: #7e7e7e;
+}
+.popup > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.popup > form > input {
+  all: unset;
+  width: 80%;
+  height: 30px;
+  margin-top: 20px;
+  border-radius: 30px;
+  padding-left: 20px;
+  background-color: #ececec;
+}
+.popup > form > div > button {
+  all: unset;
+  cursor: pointer;
+  width: 82px;
+  height: 24px;
+  background-color: #6a6a6a;
+  border-radius: 90px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  box-shadow: 3px 3px 3px #ababab;
+  margin: 24px 8px 24px 8px;
+  align-items: center;
+}
+
+/* .popup > form > input,
+.popupOff > form > input {
+  all: unset;
+  width: 80%;
+  height: 30px;
+  margin-top: 20px;
+  border-radius: 30px;
+  padding-left: 20px;
+  background-color: #ececec;
+} */
+
+/*popup end*/
+
+/* mainPage start*/
+.backgroundImg {
+  width: 100%;
+  height: 1400px;
+  object-fit: cover;
+}
+
+.loginPage > div {
+  width: 100%;
+  height: 850px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginPage > div > p,
+.mainPageclock {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  margin-top: 50px;
+}
+.loginPage > div > p {
+  letter-spacing: 5px;
+}
+
+.mainPageclock {
+  font-size: 100px;
+  font-weight: 100;
+  letter-spacing: 40px;
+}
+
+.loginPage > div > button {
+  font-size: 30px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  margin-top: 50px;
+  width: 150px;
+}
+
+.headline {
+  display: flex;
+}
+.headline > p {
+  font-size: 150px;
+  font-weight: bolder;
+  color: #ffffff;
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+}
+.headline > p:nth-child(1) {
+  color: rgb(104, 186, 104);
+}
+
+.btn btn-success {
+  width: 100px;
+}
+.btn btn-success > a{
+  color: #ffffff;
+} 
+
+@media screen and (max-width: 700px) {
+  .headline > p {
+    font-size: 50px;
+  }
+  .loginPage > div > p,
+  .mainPageclock {
+    font-size: 15px;
+  }
+  .mainPageclock {
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 20px;
+  }
+  .btn btn-success {
+    width: 50px;
+    height: 20px;
+  }
+  .btn btn-success > a{
+    color: #ffffff;
   }
 }
+/* MainPage end*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#footer {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #404040;
+  z-index: 999;
+}
+
+/* LoginPage start*/
+.window {
+  width: 100%;
+  height: 850px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window > div {
+  width: 356px;
+  height: 266px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.window > div > form > input {
+  all: unset;
+  height: 40px;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #ffffff;
+  color: white;
+  background: #40404000;
+  padding-left: 5px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+}
+
+/*자동완성시 css깨짐*/
+/* .window > div > form > input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-transition: background-color 9999s ease-out;
+  -webkit-box-shadow: 0 0 0px 1000px #40404000 inset !important;
+  -webkit-text-fill-color: #fff !important;
+}  */
+
+/*-webkit은 자동완성에 css를 입히는 옵션임*/
+/*hover, focus, active 등 모든상황을 선택자로 선택하고*/
+/*hover, focus, active 등 모든상황을 선택자로 선택하고 css설정을 한다*/
+/*단 크롬의 기본 자동완성 css가 importent기 때문에 그냥 백그라운드 컬러변경으로는 안된다.*/
+/*그래서 transition 옵션을 통해 9999초 만에 변경으로 화면이 로드됨과 동시에 색깔을 바꿔버린다. */
+.window > div > form > input:-webkit-autofill,
+.window > div > form > input:-webkit-autofill:hover,
+.window > div > form > input:-webkit-autofill:focus,
+.window > div > form > input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff; /*자동완성 글자색*/
+  -webkit-box-shadow: 0 0 0px 40rem #ffffff00 inset; /*border*/
+  -webkit-transition: background-color 9999s; /*백그라운드 컬러*/
+}
+
+.window > div > form > input::placeholder {
+  color: #ffffff;
+}
+.window > div > form > input:nth-child(2) {
+  margin-top: 10px;
+}
+.find {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.find > a {
+  font-size: 15px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+  color: white;
+}
+.find > div {
+  display: flex;
+  gap: 15px;
+}
+
+.find > div > a {
+  font-size: 15px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+  color: white;
+}
+
+.controlButton {
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+}
+.controlButton > button {
+  all: unset;
+  color: #ffffff;
+}
+.controlButton > a,
+.controlButton > button {
+  margin-top: 20px;
+  font-size: 30px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+}
+.controlButton > a > button {
+  all: unset;
+  color: #ffffff;
+}
+
+/* LoginPage end*/
+
+/* JoinPage start*/
+.joinContaner {
+  width: 100%;
+  height: 850px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.joinWindow {
+  width: 360px;
+  height: 624px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+}
+
+.joinWindow > span {
+  color: #ffffff;
+  font-size: 40px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+}
+
+.joinWindow > input {
+  all: unset;
+  height: 40px;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #ffffff;
   color: white;
+  background: #ffffff00;
+  padding-left: 5px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
 }
 
-.App-link {
-  color: #61dafb;
+.joinWindow > input::placeholder {
+  color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.joinWindow > button {
+  all: unset;
+  width: 100px;
+  margin-top: 40px;
+  font-size: 30px;
+  color: #ffffff;
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+}
+/* Joinpage end*/
+
+/*BoardMain page start*/
+.backgroundImg_boardMain {
+  opacity: 0.8;
+  width: 100%;
+  height: 1500px;
+  object-fit: cover;
+}
+
+.userImg {
+  width: 107px;
+  height: 107px;
+}
+
+.userIcon {
+  width: 121px;
+  height: 121px;
+  background-color: #777777;
+  border-radius: 999px;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 5px #404040;
+  top: 25px;
+  left: 41px;
+}
+
+.menu {
+  color: #ffffff;
+  margin-right: 50px;
+  font-size: 24px;
+  font-weight: bolder;
+  display: flex;
+  gap: 50px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.menu > span {
+  text-shadow: 5px 5px 5px #000000;
+}
+
+.menu > a > img {
+  width: 43px;
+  height: 43px;
+}
+
+.userName {
+  position: absolute;
+  left: 200px;
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+  color: #ffffff;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.userName > span {
+  font-size: 24px;
+  text-shadow: 5px 5px 5px #000000;
+}
+
+.userName > div > span {
+  text-shadow: 5px 5px 5px #000000;
+}
+
+/* .userName > div > span > a:link {
+  color: #ffffff;
+}
+.userName > div > span > a:visited {
+  color: #ffffff;
+}
+.userName > div > span > a:active {
+  color: #ffffff;
+}
+*/
+.userName > div > span:nth-child(2) {
+  margin-left: 20px;
+}
+
+.boardMain {
+  width: 1120px;
+  height: 680px;
+  background-color: #ffffff;
+  opacity: 0.9;
+  border-radius: 30px;
+  position: absolute;
+  z-index: 4;
+  top: 120px;
+  left: 20%;
+  box-sizing: border-box;
+  padding: 50px;
+}
+
+.board_menu {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 30px;
+}
+
+.boardMain > span {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.paging {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.paging > button {
+  all: unset;
+  width: 50px;
+  height: 24px;
+  background-color: #6a6a6a;
+  border-radius: 90px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  box-shadow: 3px 3px 3px #ababab;
+  cursor: pointer;
+}
+
+.titles {
+  width: 100%px;
+  height: 40px;
+  margin-top: 20px;
+  border-bottom: 1px solid #ababab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  color: #6a6a6a;
+}
+
+.titles > li:nth-child(1) {
+  width: 5%;
+}
+.titles > li:nth-child(2) {
+  width: 70%;
+}
+.titles > li:nth-child(3) {
+  width: 10%;
+}
+.titles > li:nth-child(4) {
+  width: 15%;
+}
+
+.content {
+  width: 100%px;
+  height: 40px;
+  border-bottom: 0.1px solid #d4d4d4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #6a6a6a;
+}
+
+.content > li:nth-child(1) {
+  width: 5%;
+}
+
+.content > li:nth-child(2) {
+  all: unset;
+  width: 70%;
+  text-decoration: none;
+  text-align: left;
+  margin-left: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.content > li:nth-child(3) {
+  width: 10%;
+}
+.content > li:nth-child(4) {
+  width: 15%;
+}
+.content > li > a {
+  color: #6a6a6a;
+  overflow: hidden;
+}
+
+.search_menu {
+  margin-top: 30px;
+  width: 90%;
+  height: 50px;
+  margin-left: 20px;
+}
+
+.boardMain_button {
+  all: unset;
+  width: 70px;
+  height: 24px;
+  background-color: #6a6a6a;
+  border-radius: 90px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  box-shadow: 3px 3px 3px #ababab;
+  position: absolute;
+  left: 0;
+}
+
+.boardMain_search {
+  all: unset;
+  width: 300px;
+  height: 24px;
+  border-radius: 90px;
+  color: #8a8a8a;
+  font-size: 12px;
+  border: 0.5px solid #ababab;
+  display: block;
+  margin: 0 auto;
+}
+@media screen and (max-width: 600px) {
+  .boardMain_search {
+    width: 250px;
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
   }
 }
+@media screen and (max-width: 700px) {
+  .boardMain_search {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .menu > span {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hiddenMenu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .userName {
+    position: absolute;
+    left: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #ffffff;
+    font-weight: bolder;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    width: 100%;
+    height: 80px;
+    background-color: #404040;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    align-content: center;
+    box-sizing: border-box;
+    padding: 0px 0px 0px 50px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* 0px ~ 767px사이에는 아래 css를 적용해라 */
+  .menu_icon {
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .userImg {
+    width: 70px;
+    height: 70px;
+  }
+
+  .userIcon {
+    width: 80px;
+    height: 80px;
+    background-color: #777777;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    box-shadow: 5px 5px 5px #404040;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .boardMain {
+    width: 90%;
+    height: 680px;
+    background-color: #ffffff;
+    opacity: 0.9;
+    border-radius: 30px;
+    top: 120px;
+    left: 5%;
+    box-sizing: border-box;
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .titles > li:nth-child(1) {
+    width: 10%;
+  }
+  .titles > li:nth-child(2) {
+    width: 70%;
+  }
+  .titles > li:nth-child(3) {
+    width: 20%;
+  }
+  .titles > li:nth-child(4) {
+    display: none;
+  }
+
+  .content > li:nth-child(1) {
+    width: 10%;
+  }
+  .content > li:nth-child(2) {
+    width: 70%;
+  }
+  .content > li:nth-child(3) {
+    width: 20%;
+  }
+  .content > li:nth-child(4) {
+    display: none;
+  }
+}
+
+/*BoardMain page end*/
+
+/*BoardCreate page start*/
+.boardCreate {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 30px;
+}
+.boardCreate_Text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.boardCreate_Text > textarea {
+  all: unset;
+  width: 100%;
+  background-color: #ececec;
+  padding-top: 8px; /* 원하는 만큼의 상단 간격 */
+  padding-left: 16px; /* 원하는 만큼의 왼쪽 간격 */
+}
+.boardCreate_Text > textarea:nth-child(1) {
+  height: 30px;
+  border-radius: 15px;
+}
+.boardCreate_Text > textarea:nth-child(2) {
+  border-radius: 15px;
+  height: 400px;
+  padding-top: 16px;
+}
+.boardCreate_Text > textarea:nth-child(1)::placeholder {
+  font-size: 15px;
+  box-sizing: border-box;
+  padding-top: 4px;
+  padding-left: 8px; /* 원하는 만큼의 왼쪽 간격 */
+}
+.boardCreate_Text > textarea:nth-child(2)::placeholder {
+  font-size: 15px;
+  padding-top: 4px;
+  padding-left: 8px; /* 원하는 만큼의 왼쪽 간격 */
+}
+
+.boardCreate_Buttons {
+  display: flex;
+  gap: 30px;
+}
+.boardCreate_Buttons > button {
+  all: unset;
+  cursor: pointer;
+  width: 82px;
+  height: 24px;
+  background-color: #6a6a6a;
+  border-radius: 90px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  box-shadow: 3px 3px 3px #ababab;
+}
+/*BoardCreate page end*/
+
+/*BoardView page start*/
+.textInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.textInfo > p:first-child {
+  margin-top: 20px;
+}
+.textInfo > p {
+  font-size: 12px;
+}
+
+.boardView_button {
+  all: unset;
+  cursor: pointer;
+  width: 82px;
+  height: 24px;
+  background-color: #6a6a6a;
+  border-radius: 90px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  box-shadow: 3px 3px 3px #ababab;
+  margin: 24px 8px 24px 0px;
+}
+
+.mainContent {
+  min-width: 100%;
+  height: 400px;
+  border-top: 2px solid #c5c5c5;
+  line-height: 30px;
+  font-size: 12px;
+  white-space: normal;
+  overflow: auto;
+}
+/*BoardView page end*/
+
+/* userInfoMainPage start */
+.userInfo {
+  width: 100%;
+  height: 580px;
+  display: flex;
+  justify-content: center;
+}
+.userInfo > div {
+  width: 60%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  /* box-shadow: 5px 5px 10px #ababab30; */
+  border-radius: 15px;
+}
+
+.Profile {
+  display: flex;
+  justify-content: space-between;
+}
+.Profile > div:first-child {
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Profile > div:last-child {
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.Profile > div > p {
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.Profile .real-upload {
+  width: 90px;
+  margin-top: 20px;
+}
+.userContactInfo {
+  width: 210px;
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.userInfoMain_button > button {
+  all: unset;
+  width: 82px;
+  height: 24px;
+  background-color: #6a6a6a;
+  border-radius: 90px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  box-shadow: 3px 3px 3px #ababab;
+}
+.userInfoMain_button {
+  display: flex;
+  gap: 20px;
+}
+
+/* userInfoMainPage end */
+
+/* userInfoUpdatePage start */
+.updateContaner {
+  width: 90%;
+  height: 850px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.updateWindow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.updateWindow > input {
+  all: unset;
+  height: 40px;
+  width: 300px;
+  margin: 0 auto;
+  border-bottom: 1px solid #ababab;
+  color: c5c5c;
+  background: #ffffff00;
+  padding-left: 5px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+}
+.updateWindow > div:first-child {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.real-upload {
+  width: 90px;
+}
+.updateWindow > input::placeholder {
+  color: #ababab;
+}
+.userInfoMain_button {
+  margin: 48px 0px;
+}
+/* userInfoUpdatePage end */
+
+/* Resume start */
+
+/* Resume end */

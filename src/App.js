@@ -1,25 +1,58 @@
-import logo from './logo.svg';
 import './App.css';
+import './css/resume.css';
+import './function.js'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Main from './pages/MainPage.js';
+import Login from './pages/LoginPage.js';
+import FindId from './pages/FindIdPage.js';
+import FindPw from './pages/FindPwPage.js';
+import Join from './pages/JoinPage.js';
+import Board from './pages/BoardMain.js';
+import Test from './pages/DataTest.js';
+import BoardCreate from './pages/BoardCreatePage.js';
+import BoardUpdate from './pages/BoardUpdatePage.js';
+import BoardView from './pages/BoardViewPage.js';
+import UserInfoMain from './pages/UserInfoMainPage.js'
+import UserInfoUpdate from './pages/UserInfoUpdatePage.js'
+import Resume from './pages/ResumePage.js'
+
+import { Provider } from 'react-redux';
+import store from './pages/app/store.js';
+
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+export const persistor = persistStore(store);
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <Routes>
+              <Route path='/' element={<Main />}></Route>
+              <Route path='/test' element={<Test />}></Route>
+              <Route path='/login' element={<Login />}></Route>
+              <Route path='/findId' element={<FindId />}></Route>
+              <Route path='/findPw' element={<FindPw />}></Route>
+              <Route path='/join' element={<Join />}></Route>
+              <Route path='/board' element={<Board />}></Route>
+              <Route path='/boardCreate' element={<BoardCreate />}></Route>
+              <Route path='/boardUpdate' element={<BoardUpdate />}></Route>
+              <Route path='/boardView' element={<BoardView />}></Route>
+              <Route path='/userInfoMain' element={<UserInfoMain />}></Route>
+              <Route path='/userInfoUpdate' element={<UserInfoUpdate />}></Route>
+              <Route path='/resume' element={<Resume />}></Route>
+            </Routes>
+          </PersistGate>
+        </Provider>
+        <footer>
+          <div id='footer'></div>
+        </footer>
+      </div >
+    </>
   );
 }
-
 export default App;
