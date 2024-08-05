@@ -11,7 +11,7 @@ export default function UserInfoMain() {
         <>
             <NavMenu></NavMenu>
             <div className='boardMain'>
-                <span>User Info page</span>
+                <span>User Info page - 제작중!!</span>
                 <div className='userInfo'>
                     <div>
                         <div className='Profile'>

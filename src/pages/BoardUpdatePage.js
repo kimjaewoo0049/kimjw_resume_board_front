@@ -13,8 +13,6 @@ export default function BoardCreate() {
     const navigate = useNavigate();
     const token = useSelector((state) => state.user.value)
 
-    console.log(token + "테스트");
-
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.post(
@@ -44,7 +42,7 @@ export default function BoardCreate() {
     const handleClickButton = async () => {
         try {
 
-            const response = await axios.post(
+            const response = await axios.put(
                 "http://localhost:8080/content-update",
                 {
                     uid: contentNum,
@@ -62,8 +60,7 @@ export default function BoardCreate() {
                 if (response.data === "fail") {
                     alert("작성자만 수정할 수 있습니다.")
                 } else {
-                    alert("수정완료")
-                    navigate("/boardView", { state: { contentNum } })
+                    navigate("/boardView", { state: { contentNum } });
                 }
             })
         } catch (error) {
@@ -84,7 +81,7 @@ export default function BoardCreate() {
                     </div>
                     <div className='boardCreate_Buttons'>
                         <button><Link to='/board' onClick={handleClickButton}>등록</Link></button>
-                        <button><Link to='/boardView'>취소</Link></button>
+                        <button><Link to='/boardView' onClick={handleClickButton}>취소</Link></button>
                     </div>
                 </div>
             </div>

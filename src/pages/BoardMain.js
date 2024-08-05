@@ -90,8 +90,11 @@ export default function BoardMain() {
             <ul className='content' key={index}>
                 <li>{contentNum}</li>
                 <li value={item.uid} onClick={() => {
-                    navigate("/boardView", { state: { contentNum, currentPage } })
-                }}>{item.title}</li>
+                    localStorage.setItem("contentNum", contentNum);
+                    localStorage.setItem("currentPage", currentPage);
+                    navigate("/boardView", { state: { contentNum, currentPage }})
+                    }
+                }>{item.title}</li>
                 <li>{item.userName}</li>
                 <li>{new Date(item.createAt).toLocaleString()}</li>
             </ul>

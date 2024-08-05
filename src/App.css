@@ -742,6 +742,9 @@ input:-webkit-autofill:active {
   font-weight: 50;
   font-style: normal;
 }
+.controlButton > button:hover {
+  cursor: pointer;
+}
 .controlButton > a > button {
   all: unset;
   color: #ffffff;
@@ -784,12 +787,21 @@ input:-webkit-autofill:active {
   width: 100%;
   margin: 0 auto;
   border-bottom: 1px solid #ffffff;
-  color: white;
   background: #ffffff00;
   padding-left: 5px;
   font-family: "Kanit", sans-serif;
   font-weight: 50;
   font-style: normal;
+  color: #ffffff;
+}
+
+.joinWindow > input:-webkit-autofill,
+.joinWindow > input:-webkit-autofill:hover,
+.joinWindow > input:-webkit-autofill:focus,
+.joinWindow > input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff; /*자동완성 글자색*/
+  -webkit-box-shadow: 0 0 0px 40rem #ffffff00 inset; /*border*/
+  -webkit-transition: background-color 9999s; /*백그라운드 컬러*/
 }
 
 .joinWindow > input::placeholder {
@@ -805,6 +817,10 @@ input:-webkit-autofill:active {
   font-family: "Kanit", sans-serif;
   font-weight: 50;
   font-style: normal;
+}
+.joinWindow > a {
+  color: #ffffff;
+  font-family: "Kanit", sans-serif;
 }
 /* Joinpage end*/
 
@@ -1076,11 +1092,15 @@ input:-webkit-autofill:active {
     height: 80px;
     background-color: #404040;
     position: fixed;
+    position: relative;
     z-index: 999;
     display: flex;
     align-content: center;
     box-sizing: border-box;
     padding: 0px 0px 0px 50px;
+  }
+  #test{
+    position: fixed;
   }
 }
 

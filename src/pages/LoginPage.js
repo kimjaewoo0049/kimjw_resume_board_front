@@ -17,8 +17,8 @@ export default function Login() {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-        // console.log(formData.username);
-        // console.log(formData.password);
+        console.log(formData.username);
+        console.log(formData.password);
     }
 
     const handleSubmit = async (e) => {
@@ -55,7 +55,7 @@ export default function Login() {
                         <div className='find'>
                             <div>
                                 <Link to="/findId">Find ID</Link>
-                                <Link to="/findPw">Find Password</Link>
+                                <Link to="/findPwInputId">Find Password</Link>
                             </div>
                             <Link to={'/Join'}>JOIN</Link>
                         </div>

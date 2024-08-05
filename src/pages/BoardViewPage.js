@@ -19,12 +19,16 @@ export default function BoardView() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post(
+                const response = await axios.get(
                     "http://localhost:8080/content-view", // 이주소는 서버주소임 스프링 확인할것
                     {
-                        uid: contentNum  //아래 Content-Type에는 제이슨 방식으로 요청한다고 되어있기 때문에 제이슨 형식으로 보내야함
-                    },
-                    { headers: { "Content-Type": "application/json" } }
+                        params: {
+                            uid: contentNum  //아래 Content-Type에는 제이슨 방식으로 요청한다고 되어있기 때문에 제이슨 형식으로 보내야함
+                        },
+                        headers: { 
+                            "Content-Type": "application/json" 
+                        } 
+                    }
                 );
                 setContentData(response)
             } catch (error) {
@@ -43,7 +47,7 @@ export default function BoardView() {
                 {contentData && contentData.data && (
                     <>
                         <p>작성자: {contentData.data.userName}</p>
-                        <p>제   목: {contentData.data.title}</p>
+                        <p>제  목: {contentData.data.title}</p>
                         <p>작성일: {new Date(contentData.data.createAt).toLocaleString()}</p>
                     </>
                 )}
@@ -67,7 +71,8 @@ export default function BoardView() {
     const [formData, setFormData] = useState({ uid: contentNum, userPw: "" })
 
     //삭제 승인창 팝업 이벤트
-    const handlerPopupDeleteClick = () => {
+    const handlerPopupDeleteClick = (e) => {
+        e.preventDefault()
         setDelPopup((value) => (
             value === 'popupOff' ? 'popup' : 'popupOff'
         ));
@@ -88,16 +93,14 @@ export default function BoardView() {
             value === 'popupOff' ? 'popup' : 'popupOff'
         ));
 
-        const test = axios.post(
+        const deleteResponse = axios.delete(
             "http://localhost:8080/content-delete",
             {
-                uid: contentNum
-            },
-            {
-                headers: {
-                    "Content-type": "application/json",
+                params:{uid: contentNum},
+                headers:{
+                    "Content-Type": "application/json",
                     "Authorization": token
-                }
+                } 
             }
         ).then((response) => {
             console.log(response)
@@ -108,7 +111,6 @@ export default function BoardView() {
                 navigate("/board", { state: { contentNum, currentPage } })
             }
         })
-        console.log(test)
     };
 
     //업데이트 버튼 이벤트

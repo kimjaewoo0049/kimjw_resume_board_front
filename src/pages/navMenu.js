@@ -55,8 +55,7 @@ function NavMenu() {
                     </a>
                 </div>
             </div >
-            <div className={myClass}>
-                <img src={homeIconImg} alt='home'></img>
+            <div className={myClass} id='test'>
                 <span><Link to='/resume'>RESUME PAGE</Link></span>
                 <span><Link to='/board'>BOARD PAGE</Link></span>
                 <span>Portfolio.3</span>

@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Main from './pages/MainPage.js';
 import Login from './pages/LoginPage.js';
 import FindId from './pages/FindIdPage.js';
+import FindPwSendMail from './pages/FindPwSendMailPage.js';
 import FindPw from './pages/FindPwPage.js';
 import Join from './pages/JoinPage.js';
 import Board from './pages/BoardMain.js';
@@ -36,6 +37,7 @@ function App() {
               <Route path='/test' element={<Test />}></Route>
               <Route path='/login' element={<Login />}></Route>
               <Route path='/findId' element={<FindId />}></Route>
+              <Route path='/findPwSendMail' element={<FindPwSendMail />}></Route>
               <Route path='/findPw' element={<FindPw />}></Route>
               <Route path='/join' element={<Join />}></Route>
               <Route path='/board' element={<Board />}></Route>
