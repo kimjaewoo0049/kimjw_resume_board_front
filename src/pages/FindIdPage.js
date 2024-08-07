@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 export default function FindId() {
 
+    const [url, setUrl] = useState(localStorage.getItem("url"));
     const [formData, setFormData] = useState({
         userName: "",
         email: ""
@@ -16,7 +17,7 @@ export default function FindId() {
 
 
     const handleClickFindId = async() => {
-        const response = await axios.post("http://localhost:8080/findId", formData,
+        const response = await axios.post(url + "/findId", formData,
         { headers: { "Content-Type": "application/json" } });
         if(response.data !== ""){
             alert("ID는 "+response.data+" 입니다.")

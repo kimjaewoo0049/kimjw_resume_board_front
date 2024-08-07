@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 export default function FindPw() {
 
     const navigate = useNavigate();
+    const [url, setUrl] = useState(localStorage.getItem("url"));
 
     const [formData, setFormData] = useState ({
         userId: localStorage.getItem("userId")||"",
@@ -32,7 +33,7 @@ export default function FindPw() {
         }else if(pwRegex.test(formData.newPassword) === false){
             alert("패스워드는 영문숫자조합, 특수문자 포함, 총8자리 이상이어야 합니다.");
         }else{
-            const response = await axios.post("http://localhost:8080/rePassword", formData,
+            const response = await axios.post(url + "/rePassword", formData,
                 { headers: { 'Content-Type': 'application/json' } });
             alert("변경이 완료되었습니다.");
             navigate("/login");

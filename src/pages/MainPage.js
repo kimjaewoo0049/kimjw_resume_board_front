@@ -22,7 +22,6 @@ export default function Main() {
         hour12: false
     }).format(time);
 
-
     return (
         <div className='loginPage'>
             <div>

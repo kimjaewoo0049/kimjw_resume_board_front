@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function Join() {
 
     const navigate = useNavigate();
-
+    const [url, setUrl] = useState(localStorage.getItem("url"));
     const [formData, setFormData] = useState({
         userId: "",
         userPw: "",
@@ -42,10 +42,10 @@ export default function Join() {
         } else if (phoneRegex.test(formData.phone) === false){    
             alert("전화번호 형식에 맞지 않습니다. 핸드폰 번호를 숫자만(-제외) 입력해주세요");
         } else{
-            const regexResponse = await axios.post("http://localhost:8080/infoRegex", formData,
+            const regexResponse = await axios.post(url + "/infoRegex", formData,
                 { headers: { "Content-Type": "application/json" } });
             if(regexResponse.data === "성공" ){
-                const response = await axios.post("http://localhost:8080/join", formData,
+                const response = await axios.post(url + "/join", formData,
                     { headers: { "Content-Type": "application/json" } });
                 alert("가입이 완료되었습니다.");
                 navigate("/login")
