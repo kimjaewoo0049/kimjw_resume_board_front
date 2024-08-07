@@ -8,6 +8,7 @@ export default function FindPw() {
 
     const navigate = useNavigate();
     const [formData, setFormData] = useState({userId: "", email: ""});
+    const [url, setUrl] = useState(localStorage.getItem("url"));
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -16,14 +17,14 @@ export default function FindPw() {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const response = await axios.post("http://localhost:8080/pwCheck", formData,
+        const response = await axios.post(url + "/pwCheck", formData,
             { headers: { 'Content-Type': 'application/json' } });
         if(response.data === true){
             alert("인증메일을 발송했습니다. 메일함을 확인해주세요");
             localStorage.setItem("userId", formData.userId);
             localStorage.setItem("email", formData.email);
             navigate("/findPw");
-            const sendMailResponse = await axios.post("http://localhost:8080/sendMail", formData,
+            const sendMailResponse = await axios.post(url + "/sendMail", formData,
                 { headers: { 'Content-Type': 'application/json' } });
         }else{
             alert("가입되어있는 유저가 아닙니다. ID혹은 EMAIL을 확인해주세요");

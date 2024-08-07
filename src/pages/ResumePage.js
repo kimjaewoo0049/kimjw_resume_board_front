@@ -8,7 +8,6 @@ import birthday from '../image/birthday.png'
 import email from '../image/email.png'
 import phone from '../image/telephone.png'
 import address from '../image/address.png'
-import hpLogo from '../image/company_Icon/hp_logo.png'
 
 // skill logo img
 import web_logo from '../image/skill_logo/html_css_js_logo.png' 

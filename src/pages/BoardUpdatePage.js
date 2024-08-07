@@ -10,13 +10,15 @@ export default function BoardCreate() {
     const location = useLocation();
     const contentNum = location.state?.uid;
     const [boardData, setBoardData] = useState({ title: '', content: '' });
+    const [url, setUrl] = useState(localStorage.getItem("url"));
+
     const navigate = useNavigate();
     const token = useSelector((state) => state.user.value)
-
+        
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.post(
-                "http://localhost:8080/content-find",
+                url + "/content-find",
                 {
                     uid: contentNum
                 },
@@ -43,7 +45,7 @@ export default function BoardCreate() {
         try {
 
             const response = await axios.put(
-                "http://localhost:8080/content-update",
+                url + "/content-update",
                 {
                     uid: contentNum,
                     title: boardData.title,

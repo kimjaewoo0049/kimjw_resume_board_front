@@ -14,6 +14,7 @@ export default function BoardMain() {
 
     const [user, setUser] = useState({ "uid": localStorage.getItem("useruid") }); // user정보
     const [responseData, setResponseData] = useState();
+    const [url, setUrl] = useState(localStorage.getItem("url"));
 
     const navigate = useNavigate();
     const uid = localStorage.getItem("userUid");
@@ -23,7 +24,7 @@ export default function BoardMain() {
         const fetchData = async () => {
             try {
                 const response = await axios.post(
-                    "http://localhost:8080/userlist",
+                    url + "/userlist",
                     user,
                     { headers: { "Content-Type": "application/json" } }
                 );
@@ -41,7 +42,7 @@ export default function BoardMain() {
     //페이징을 하기 위한 함수
     useEffect(() => {
         axios.post(
-            "http://localhost:8080/board-list",  // 출력할 게시물을 검색해오기
+            url + "/board-list",  // 출력할 게시물을 검색해오기
             {
                 postNum: postNum,
                 currentPage: currentPage - 1  //입력된 currentPage에 -1하는 이유는 index 0부터 서버에서 처리하기 위해 -1로 데이터 보냄
@@ -55,7 +56,7 @@ export default function BoardMain() {
     //전체 데이터 개수 구하는 부분
     const postCount = async () => {
         const response = await axios.post(
-            "http://localhost:8080/post-count",
+            url + "/post-count",
             { headers: { "Content-Type": "application/json" } }
         );
         setPageCount(response.data);
@@ -67,7 +68,7 @@ export default function BoardMain() {
         const fetchData = async () => {
             try {
                 const response = await axios.post(
-                    "http://localhost:8080/board-list",
+                    url + "/board-list",
                     {
                         postNum: postNum,
                         currentPage: currentPage - 1  //입력된 currentPage에 -1하는 이유는 index 0부터 서버에서 처리하기 위해 -1로 데이터 보냄

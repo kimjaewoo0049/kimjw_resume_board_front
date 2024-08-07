@@ -17,14 +17,15 @@ export default function Login() {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-        console.log(formData.username);
-        console.log(formData.password);
     }
+
+    localStorage.setItem("url", "http://localhost:8080");
+    const [url, setUrl] = useState(localStorage.getItem("url"));
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:8080/login", formData,
+            const response = await axios.post(url+"/login", formData,
                 { headers: { "Content-Type": "application/x-www-form-urlencoded" } });
 
             const token = response.headers.get('authorization'); // header가 authorization로 시작하는 토큰 가지고 오기
@@ -54,13 +55,13 @@ export default function Login() {
                         <input type="password" name="password" placeholder="password" value={formData.password} onChange={handleInputChange} />
                         <div className='find'>
                             <div>
-                                <Link to="/findId">Find ID</Link>
-                                <Link to="/findPwInputId">Find Password</Link>
+                                <Link to="/findId">ID 찾기</Link>
+                                <Link to="/findPwInputId">Password 재발급</Link>
                             </div>
-                            <Link to={'/Join'}>JOIN</Link>
+                            <Link to={'/Join'}>회원가입</Link>
                         </div>
                         <div className='controlButton'>
-                            <button type='submit'>LOGIN</button>
+                            <button type='submit'>SIGN UP</button>
                             <Link to="/"><button>CANCLE</button></Link>
                         </div>
                     </form>

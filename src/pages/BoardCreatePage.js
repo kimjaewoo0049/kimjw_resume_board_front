@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 export default function BoardCreate() {
 
     const token = useSelector((state) => state.user.value)
+    const [url, setUrl] = useState(localStorage.getItem("url"));
 
     const [boardData, setBoardData] = useState({ title: '', content: '' });
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ export default function BoardCreate() {
     const handleClickButton = async () => {
         try {
             const response = await axios.post(
-                "http://localhost:8080/content-create",
+                url + "/content-create",
                 {
                     title: boardData.title,
                     content: boardData.content

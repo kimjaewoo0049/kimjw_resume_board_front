@@ -12,6 +12,7 @@ export default function BoardView() {
     const currentPage = location.state?.currentPage;
     const navigate = useNavigate();
     const [contentData, setContentData] = useState();
+    const [url, setUrl] = useState(localStorage.getItem("url"));
 
     const token = useSelector((state) => state.user.value)
 
@@ -20,7 +21,7 @@ export default function BoardView() {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    "http://localhost:8080/content-view", // 이주소는 서버주소임 스프링 확인할것
+                    url + "/content-view", // 이주소는 서버주소임 스프링 확인할것
                     {
                         params: {
                             uid: contentNum  //아래 Content-Type에는 제이슨 방식으로 요청한다고 되어있기 때문에 제이슨 형식으로 보내야함
@@ -94,7 +95,7 @@ export default function BoardView() {
         ));
 
         const deleteResponse = axios.delete(
-            "http://localhost:8080/content-delete",
+            url + "/content-delete",
             {
                 params:{uid: contentNum},
                 headers:{
