@@ -6,8 +6,6 @@ import { userData } from './app/slice/userSlice.js';
 import '../function.js'
 import axios from 'axios';
 
-
-
 export default function Login() {
 
     const navigate = useNavigate();
@@ -19,7 +17,7 @@ export default function Login() {
         setFormData({ ...formData, [name]: value });
     }
 
-    localStorage.setItem("url", "http://3.36.57.117:8080");
+    localStorage.setItem("url", "http://localhost:8080");
     const [url, setUrl] = useState(localStorage.getItem("url"));
 
     const handleSubmit = async (e) => {
