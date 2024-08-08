@@ -26,7 +26,6 @@ import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 export const persistor = persistStore(store);
 
-
 function App() {
   const access = localStorage.getItem("username");
   return (
@@ -48,7 +47,7 @@ function App() {
               <Route path='/boardView' element={<BoardView />}></Route>
               <Route path='/userInfoMain' element={<UserInfoMain />}></Route>
               <Route path='/userInfoUpdate' element={<UserInfoUpdate />}></Route>
-              {/* <Route path='/board' element={<PrivateRoute authenticated={access} component={<Board />}/>}></Route>  */}
+              {/* <Route path='/resume' element={<Resume />}></Route> */}
               <Route path='/resume' element={<PrivateRoute authenticated={access} component={<Resume />}/>}></Route> 
             </Routes>
           </PersistGate>
