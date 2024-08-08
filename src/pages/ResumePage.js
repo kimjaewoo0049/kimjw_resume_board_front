@@ -39,11 +39,12 @@ export default function Resume() {
         { imgSrc: jira_logo, imgAlt: '지라로고', description: 'jira를 이용한 협업 경험이 있습니다.' },
     ];
 
-    const handleClickButton = () => {
-        const fileUrl = '../image/skill_logo/jira_logo.png'; // 파일 URL
+    const handleClickButton = (e) => {
+        const fileType = e.target.name === 'pdf'? 'resume_pdf_20240808.pdf':'resume_doc_20240808.doc';
+        const fileUrl = `${process.env.PUBLIC_URL}/resume/${fileType}`; // 파일 URL
         const link = document.createElement('a');
         link.href = fileUrl;
-        link.setAttribute('download', 'file.pdf'); // 파일 이름 설정
+        link.setAttribute('download', fileType); // 파일 이름 설정
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -61,7 +62,10 @@ export default function Resume() {
                             <div><img src={email} alt='메일아이콘'></img><span>kim1656@naver.com</span></div>
                             <div><img src={phone} alt='전화아이콘'></img><span>010-4290-1656</span></div>
                             <div><img src={address} alt='주소아이콘'></img><span>서울시 강동구 상임로 79길 88</span></div>
-                            <button className='download' onClick={handleClickButton}>RESUME DOWNLOAD</button>
+                            <div>
+                                <button className='download' name='pdf' onClick={handleClickButton}>PDF RESUME DOWNLOAD</button>
+                                <button className='download' name='doc' onClick={handleClickButton}>DOC RESUME DOWNLOAD</button>
+                            </div>
                         </div>
                     </div>
                     <div>
