@@ -26,7 +26,6 @@ import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 export const persistor = persistStore(store);
 
-
 function App() {
   const access = localStorage.getItem("username");
   return (
