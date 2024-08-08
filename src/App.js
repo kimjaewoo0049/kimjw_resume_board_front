@@ -48,7 +48,7 @@ function App() {
               <Route path='/boardView' element={<BoardView />}></Route>
               <Route path='/userInfoMain' element={<UserInfoMain />}></Route>
               <Route path='/userInfoUpdate' element={<UserInfoUpdate />}></Route>
-              {/* <Route path='/board' element={<PrivateRoute authenticated={access} component={<Board />}/>}></Route>  */}
+              {/* <Route path='/resume' element={<Resume />}></Route> */}
               <Route path='/resume' element={<PrivateRoute authenticated={access} component={<Resume />}/>}></Route> 
             </Routes>
           </PersistGate>
