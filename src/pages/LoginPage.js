@@ -54,7 +54,7 @@ export default function Login() {
                         <div className='find'>
                             <div>
                                 <Link to="/findId">ID 찾기</Link>
-                                <Link to="/findPwInputId">Password 재발급</Link>
+                                <Link to="/findPwSendMail">Password 재발급</Link>
                             </div>
                             <Link to={'/Join'}>회원가입</Link>
                         </div>

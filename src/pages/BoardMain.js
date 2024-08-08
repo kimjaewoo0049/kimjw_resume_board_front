@@ -33,7 +33,7 @@ export default function BoardMain() {
                     localStorage.setItem("userInfo", JSON.stringify(arr))
                 })
             } catch (error) {
-                alert("고객정보 불러오기 오류");
+                alert("게시판을 보시려면 로그인이 필요합니다. 담당자께 문의해주세요");
             }
         };
         fetchData();

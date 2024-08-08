@@ -20,9 +20,13 @@ import springBoot_logo from '../image/skill_logo/springboot_logo.png'
 import git_logo from '../image/skill_logo/git_logo.png' 
 import postman_logo from '../image/skill_logo/postman_logo2.png' 
 import jira_logo from '../image/skill_logo/jira_logo.png' 
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Resume() {
 
+    const navigete = useNavigate;
+    
     const skills1 = [
         { imgSrc: web_logo, imgAlt: '웹로고', description: 'HTML의 계층구조를 이해하고 있으며 css와 js를 사용해 화면을 디자인 할 수 있습니다.' },
         { imgSrc: jsp_logo, imgAlt: 'jsp로고', description: 'jsp를 이용해 서버 데이터를 요청하고 화면에 출력할 수 있습니다.' },
@@ -49,6 +53,13 @@ export default function Resume() {
         link.click();
         document.body.removeChild(link);
     }
+
+    useEffect (() => {
+        if(localStorage.getItem("username")===""){
+            alert("로그인 해주세요");
+            navigete("/");
+        }
+    },[])
 
     return (
         <>

@@ -17,6 +17,7 @@ import BoardView from './pages/BoardViewPage.js';
 import UserInfoMain from './pages/UserInfoMainPage.js'
 import UserInfoUpdate from './pages/UserInfoUpdatePage.js'
 import Resume from './pages/ResumePage.js'
+import PrivateRoute from './pages/component/privateRoute.js';
 
 import { Provider } from 'react-redux';
 import store from './pages/app/store.js';
@@ -27,6 +28,7 @@ export const persistor = persistStore(store);
 
 
 function App() {
+  const access = localStorage.getItem("username");
   return (
     <>
       <div>
@@ -46,7 +48,8 @@ function App() {
               <Route path='/boardView' element={<BoardView />}></Route>
               <Route path='/userInfoMain' element={<UserInfoMain />}></Route>
               <Route path='/userInfoUpdate' element={<UserInfoUpdate />}></Route>
-              <Route path='/resume' element={<Resume />}></Route>
+              {/* <Route path='/board' element={<PrivateRoute authenticated={access} component={<Board />}/>}></Route>  */}
+              <Route path='/resume' element={<PrivateRoute authenticated={access} component={<Resume />}/>}></Route> 
             </Routes>
           </PersistGate>
         </Provider>
