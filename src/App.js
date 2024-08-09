@@ -27,7 +27,6 @@ import { PersistGate } from "redux-persist/integration/react";
 export const persistor = persistStore(store);
 
 function App() {
-  const access = localStorage.getItem("username");
   return (
     <>
       <div>
@@ -41,14 +40,13 @@ function App() {
               <Route path='/findPwSendMail' element={<FindPwSendMail />}></Route>
               <Route path='/findPw' element={<FindPw />}></Route>
               <Route path='/join' element={<Join />}></Route>
-              <Route path='/board' element={<Board />}></Route>
-              <Route path='/boardCreate' element={<BoardCreate />}></Route>
-              <Route path='/boardUpdate' element={<BoardUpdate />}></Route>
-              <Route path='/boardView' element={<BoardView />}></Route>
-              <Route path='/userInfoMain' element={<UserInfoMain />}></Route>
-              <Route path='/userInfoUpdate' element={<UserInfoUpdate />}></Route>
-              {/* <Route path='/resume' element={<Resume />}></Route> */}
-              <Route path='/resume' element={<PrivateRoute authenticated={access} component={<Resume />}/>}></Route> 
+              <Route path='/board' element={<PrivateRoute element={<Board />}/>}></Route> 
+              <Route path='/boardCreate' element={<PrivateRoute element={<BoardCreate />}/>}></Route> 
+              <Route path='/boardUpdate' element={<PrivateRoute element={<BoardUpdate />}/>}></Route> 
+              <Route path='/boardView' element={<PrivateRoute element={<BoardView />}/>}></Route> 
+              <Route path='/userInfoMain' element={<PrivateRoute element={<UserInfoMain />}/>}></Route> 
+              <Route path='/userInfoUpdate' element={<PrivateRoute element={<UserInfoUpdate />}/>}></Route> 
+              <Route path='/resume' element={<PrivateRoute element={<Resume />}/>}></Route> 
             </Routes>
           </PersistGate>
         </Provider>
